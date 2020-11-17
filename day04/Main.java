@@ -8,23 +8,20 @@ public class Main {
 		Calculator calculator = new Calculator();
 		
 		System.out.print("숫자1: ");
-		int num1 = scanner.nextInt();
-		calculator.setNumber1(num1);
+		calculator.setNumber1(scanner.nextInt());
 		System.out.print("숫자2: ");
-		int num2 = scanner.nextInt();
-		calculator.setNumber2(num2);
+		calculator.setNumber2(scanner.nextInt());
 		System.out.print("연산자: ");
-		String op = scanner.next();
-		calculator.setOperator(op);
+		calculator.setOperator(scanner.next());
 		
-		if(op.equals("+")) {
-			System.out.println("숫자1 + 숫자2 = "+calculator.add(num1, num2));
-		}else if(op.equals("-")) {
-			System.out.println("숫자1 - 숫자2 = "+calculator.subtrace(num1, num2));
-		}else if(op.equals("*")) {
-			System.out.println("숫자1 * 숫자2 = "+calculator.multiply(num1, num2));
-		}else if(op.equals("")) {
-			System.out.println("숫자1 / 숫자2 = "+calculator.divide(num1, num2));
+		if(calculator.getOperator().equals("+")) {
+			System.out.println("숫자1 + 숫자2 = "+calculator.add(calculator.getNumber1(), calculator.getNumber2()));
+		}else if(calculator.getOperator().equals("-")) {
+			System.out.println("숫자1 - 숫자2 = "+calculator.subtrace(calculator.getNumber1(), calculator.getNumber2()));
+		}else if(calculator.getOperator().equals("*")) {
+			System.out.println("숫자1 * 숫자2 = "+calculator.multiply(calculator.getNumber1(), calculator.getNumber2()));
+		}else if(calculator.getOperator().equals("")) {
+			System.out.println("숫자1 / 숫자2 = "+calculator.divide(calculator.getNumber1(), calculator.getNumber2()));
 		}else {
 			System.out.println("잘못 입력하셨습니다.");
 		}
